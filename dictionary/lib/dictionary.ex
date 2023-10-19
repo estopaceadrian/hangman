@@ -1,18 +1,25 @@
 defmodule Dictionary do
-  @moduledoc """
-  Documentation for `Dictionary`.
-  """
+  @word_list "assets/words.txt"
+             |> File.read!()
+             |> String.split(~r/\n/, trim: true)
 
-  @doc """
-  Hello world.
+  def random_word do
+    @word_list
+    |> Enum.random()
+  end
 
-  ## Examples
+  def to_snake_case(input) do
+    transformed_string =
+      input
+      |> String.downcase()
+      |> String.replace(~r/\s+/, "_")
 
-      iex> Dictionary.hello()
-      :world
+    {:ok, transformed_string}
+  end
 
-  """
-  def hello do
-    :world
+  def to_integer(input, _base) do
+    transformed_string =
+      input
+      |> String.to_integer(_base)
   end
 end
