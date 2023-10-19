@@ -21,5 +21,7 @@ defmodule Dictionary do
     transformed_string =
       input
       |> String.to_integer(_base)
+
+    {:ok, transformed_string}
   end
 end
