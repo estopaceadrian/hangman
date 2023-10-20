@@ -24,4 +24,12 @@ defmodule Dictionary do
 
     {:ok, transformed_string}
   end
+
+  def func1({a, b}) do
+    IO.puts("a = #{a}, b = #{b}")
+  end
+
+  def func2(t = {a, b}) do
+    IO.puts("a = #{a}, b = #{b}, is_tuple{t}")
+  end
 end
