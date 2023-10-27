@@ -32,4 +32,18 @@ defmodule Dictionary do
   def func2(t = {a, b}) do
     IO.puts("a = #{a}, b = #{b}, is_tuple{t}")
   end
+
+  def read_file({:ok, file}) do
+    file
+    |> IO.read(:line)
+  end
+
+  def read_file({:error, reason}) do
+    Logger.error("File error: #{reason}")
+    []
+  end
+
+  def get_string(input) do
+    IO.puts(input)
+  end
 end
