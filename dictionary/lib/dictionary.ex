@@ -43,7 +43,20 @@ defmodule Dictionary do
     []
   end
 
-  def get_string(input) do
-    IO.puts(input)
+  def get_string do
+    IO.puts("What is your name?")
+    name = get_name()
+    IO.puts("Hello  #{name}!")
+  end
+
+  defp get_name do
+    name = String.trim(IO.gets("Name: "))
+
+    if String.length(name) == 0 do
+      IO.puts("Name cannot be empty. Please enter your name.")
+      get_name()
+    else
+      name
+    end
   end
 end
