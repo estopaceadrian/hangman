@@ -12,4 +12,12 @@ defmodule Brick do
   def get_size(brick) do
     brick.size
   end
+
+  def print_pyramid(n) when is_integer(n) and n > 0 do
+    for i <- 1..n do
+      spaces = String.duplicate(" ", n - i)
+      stars = String.duplicate("*", 2 * i - 1)
+      IO.puts("#{spaces}#{stars}")
+    end
+  end
 end
