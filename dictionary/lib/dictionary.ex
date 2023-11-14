@@ -29,7 +29,7 @@ defmodule Dictionary do
     IO.puts("a = #{a}, b = #{b}")
   end
 
-  def func2(t = {a, b}) do
+  def func2(_t = {a, b}) do
     IO.puts("a = #{a}, b = #{b}, is_tuple{t}")
   end
 
